@@ -1,6 +1,6 @@
 <template>
   <UiNavbar />
-  <UContainer class="py-10">
+  <UContainer>
     <slot />
   </UContainer>
 </template>
