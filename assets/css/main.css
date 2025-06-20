@@ -2,5 +2,5 @@
 @import '@nuxt/ui';
 
 @theme {
-  --font-sans: 'Poppins', sans-serif;
+  --font-sans: 'Raleway', 'Poppins', Roboto, sans-serif;
 }

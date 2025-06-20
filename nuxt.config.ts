@@ -17,6 +17,10 @@ export default defineNuxtConfig({
         name: 'Poppins',
         provider: 'google',
       },
+      {
+        name: 'Raleway',
+        provider: 'google',
+      },
     ],
   },
 
