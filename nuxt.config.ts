@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   modules: [
-    "@nuxt/content",
     "@nuxt/eslint",
     "@nuxt/fonts",
     "@nuxt/icon",
@@ -46,4 +45,5 @@ export default defineNuxtConfig({
   },
 
   css: ["~/assets/css/main.css"],
+  ssr: true,
 });
