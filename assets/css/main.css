@@ -1,6 +1,15 @@
-@import 'tailwindcss';
-@import '@nuxt/ui';
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+:root {
+  --ui-radius: 0.5rem;
+}
 
 @theme {
-  --font-sans: 'Raleway', 'Poppins', Roboto, sans-serif;
+  --font-sans: "Raleway", "Poppins", Roboto, sans-serif;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
 }

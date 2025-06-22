@@ -13,6 +13,9 @@
     "blog": "Blog"
   },
   "portfolio": {
+    "resume": {
+      "generate": "Generar CV"
+    },
     "summary": {
       "title": "Sobre mi",
       "about": "Desarrollador front-end con más de 3 años de experiencia creando interfaces modernas con Vue, React y React Native. También tengo experiencia en NestJS y Flutter. Me especializo en soluciones escalables con foco en rendimiento y experiencia de usuario. Me definen la autonomía, el aprendizaje constante y la orientación a resultados. Busco contribuir en productos remotos de alto impacto internacional, aplicando buenas prácticas y tecnología de calidad."
@@ -52,7 +55,31 @@
       ]
     },
     "education": {
-      "title": "Educación"
+      "title": "Educación",
+      "items": [
+        {
+          "title": "Ingeniería en Desarrollo de Software",
+          "institution": "Universidad Ciudadana de Nuevo León",
+          "date": "2024 - 2027 (en curso)"
+        },
+        {
+          "title": "Bachiller Técnico en Informática",
+          "institution": "CONALEP",
+          "date": "2017 – 2020"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Habilidades"
+    },
+    "personalProjects": {
+      "title": "Proyectos Personales",
+      "items": [
+        {
+          "title": "Sistema de Gestión Electoral (2024)",
+          "description": "Aplicación web desarrollada para gestionar elecciones gubernamentales a nivel local. Construida con React, TanStack Query, React Router y ShadCN UI."
+        }
+      ]
     }
   }
 }

@@ -6,6 +6,6 @@ useSeoMeta({
 
 <template>
   <UContainer>
-    <h1>Work on progress</h1>
+    <h1>Work in progress</h1>
   </UContainer>
 </template>

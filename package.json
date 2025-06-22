@@ -21,8 +21,12 @@
     "eslint": "^9.0.0",
     "eslint-plugin-vue": "^10.2.0",
     "nuxt": "^3.17.5",
+    "pdfmake": "^0.2.20",
     "typescript": "^5.6.3",
     "vue": "^3.5.16",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/pdfmake": "^0.2.11"
   }
 }
