@@ -1,4 +1,22 @@
 <script lang="ts" setup>
+import type { NavigationMenuItem } from "@nuxt/ui";
+
+const { locale, setLocale, t } = useI18n();
+
+const items = computed<NavigationMenuItem[]>(() => [
+  {
+    label: t("navbar.home"),
+    href: "/",
+  },
+  {
+    label: t("navbar.portfolio"),
+    href: "/portfolio",
+  },
+  {
+    label: t("navbar.blog"),
+    href: "/blog",
+  },
+]);
 const isOpen = ref(false);
 </script>
 
@@ -10,22 +28,35 @@ const isOpen = ref(false);
         <span class="text-primary">.Vue</span>
       </h1>
 
-      <UButton
-        icon="i-lucide-menu"
-        variant="ghost"
-        class="lg:hidden"
-        :ui="{ leadingIcon: 'size-6!' }"
-        @click="isOpen = !isOpen"
-      />
-
-      <div
-        class="fixed left-0 top-14 transition-all duration-500 p-4 z-0 bg-default w-full flex flex-col items-center gap-2 lg:static lg:translate-y-0 lg:flex-row lg:w-fit lg:p-0"
-        :class="isOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'"
-      >
-        <UButton variant="ghost">Home</UButton>
-        <UButton variant="ghost">Portfolio</UButton>
-        <UButton variant="ghost">Blog</UButton>
+      <div class="flex items-center gap-2 flex-row">
+        <UNavigationMenu :items="items" class="hidden md:block" />
         <UiColorModeButton />
+        <UButton
+          variant="subtle"
+          @click="setLocale(locale === 'en' ? 'es' : 'en')"
+        >
+          {{ locale }}
+        </UButton>
+        <u-slideover>
+          <UButton
+            icon="i-lucide-menu"
+            variant="ghost"
+            class="lg:hidden"
+            :ui="{ leadingIcon: 'size-6!' }"
+            @click="isOpen = !isOpen"
+          />
+
+          <template #title>
+            <h1 class="font-bold text-2xl">
+              <span>Valen</span>
+              <span class="text-primary">.Vue</span>
+            </h1>
+          </template>
+
+          <template #body>
+            <u-navigation-menu :items="items" orientation="vertical" />
+          </template>
+        </u-slideover>
       </div>
     </UContainer>
   </header>

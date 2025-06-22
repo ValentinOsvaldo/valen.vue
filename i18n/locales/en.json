@@ -1,0 +1,59 @@
+{
+  "home": {
+    "hero": {
+      "title": "Improving your apps",
+      "slogan": "My goal is to create innovative and user-friendly applications that meet your needs and exceed your expectations.",
+      "mail": "Get in touch",
+      "portfolio": "Portfolio"
+    }
+  },
+  "navbar": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "blog": "Blog"
+  },
+  "portfolio": {
+    "summary": {
+      "title": "About me",
+      "about": "Front-end developer with 3+ years of experience building modern interfaces using Vue, React, and React Native. Also experienced with NestJS and Flutter. I focus on scalable solutions with strong performance and user experience. I'm self-driven, constantly learning, and results-oriented. Looking to contribute to high-impact remote products with best practices and clean, effective tech."
+    },
+    "experience": {
+      "title": "Experience",
+      "items": [
+        {
+          "title": "Front-End Developer",
+          "company": "Aeto",
+          "date": "2022 - At Present",
+          "bullets": [
+            "Migrated a legacy Django Template system to Next.js + DRF, adding full i18n and modern UI/UX improvements.",
+            "Built a roadside assistance platform using React, TypeScript, and Google Maps, featuring payment flows and optimized UI rendering.",
+            "Integrated third-party modules and collaborated closely with backend, hardware, and support teams."
+          ]
+        },
+        {
+          "title": "Front-End Mobile Developer",
+          "company": "Aeto",
+          "date": "2023 - At Present",
+          "bullets": [
+            "Built the AETO App (React Native + Bluetooth) from scratch, now used by over 150 active users for field diagnostics.",
+            "Developed a mobile app for roadside technicians, with real-time route tracing using Google Maps to coordinate field rescues."
+          ]
+        },
+        {
+          "title": "Senior Front-End Developer",
+          "company": "Aeto",
+          "date": "2025 - At Present",
+          "bullets": [
+            "Led the development of a custom PDF generation system (NestJS + pdfmake + Puppeteer), improving a client’s process efficiency by 20% and boosting satisfaction.",
+            "Integrated Sentry into mobile apps, enabling better crash tracking and reducing resolution time.",
+            "Act as a technical lead, defining stacks, researching solutions, and promoting best practices across the team."
+          ]
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "about": ""
+    }
+  }
+}

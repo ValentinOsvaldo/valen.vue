@@ -1,0 +1,58 @@
+{
+  "home": {
+    "hero": {
+      "title": "Mejorando tus aplicaciones",
+      "slogan": "Mi objetivo es crear aplicaciones innovadoras y de fácil uso que cumplan con tus necesidades y superen tus expectativas.",
+      "mail": "Contacto",
+      "portfolio": "Portafolio"
+    }
+  },
+  "navbar": {
+    "home": "Inicio",
+    "portfolio": "Portafolio",
+    "blog": "Blog"
+  },
+  "portfolio": {
+    "summary": {
+      "title": "Sobre mi",
+      "about": "Desarrollador front-end con más de 3 años de experiencia creando interfaces modernas con Vue, React y React Native. También tengo experiencia en NestJS y Flutter. Me especializo en soluciones escalables con foco en rendimiento y experiencia de usuario. Me definen la autonomía, el aprendizaje constante y la orientación a resultados. Busco contribuir en productos remotos de alto impacto internacional, aplicando buenas prácticas y tecnología de calidad."
+    },
+    "experience": {
+      "title": "Experiencia",
+      "items": [
+        {
+          "title": "Front-End Developer",
+          "company": "Aeto",
+          "date": "2022 - Presente",
+          "bullets": [
+            "Migré un sistema heredado de Django Templates a Next.js + DRF, con traducciones e interfaces modernas, mejorando la mantenibilidad y experiencia de usuario.",
+            "Desarrollé una plataforma web de gestión de rescates viales usando React, TypeScript y Google Maps, incluyendo pagos y virtualización de listas.",
+            "Lideré la integración de módulos externos y colaboré estrechamente con equipos de backend, hardware y soporte técnico."
+          ]
+        },
+        {
+          "title": "Front-End Mobile Developer",
+          "company": "Aeto",
+          "date": "2023 - Presente",
+          "bullets": [
+            "Construí desde cero la app AETO App (React Native + Bluetooth), utilizada por más de 150 usuarios en producción para diagnóstico de equipos en campo.",
+            "Desarrollé una app móvil para rescatistas viales, con trazado de rutas en tiempo real vía Google Maps, mejorando la logística de auxilios en carretera."
+          ]
+        },
+        {
+          "title": "Senior Front-End Developer",
+          "company": "Aeto",
+          "date": "2025 - Presente",
+          "bullets": [
+            "Lideré el desarrollo de un módulo de generación de PDFs personalizados con NestJS, pdfmake y Puppeteer, mejorando la eficiencia de un cliente en un 20% y elevando la satisfacción del usuario.",
+            "Implementé Sentry en aplicaciones móviles para monitoreo de errores, reduciendo tiempos de diagnóstico y mejorando la estabilidad en producción.",
+            "Actúo como referente técnico: selecciono tecnologías, propongo arquitecturas y defino buenas prácticas dentro del equipo."
+          ]
+        }
+      ]
+    },
+    "education": {
+      "title": "Educación"
+    }
+  }
+}
