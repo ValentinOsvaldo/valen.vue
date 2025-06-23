@@ -69,9 +69,11 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true },
     '/portfolio': { ssr: false },
+    // '/blog/**': { prerender: true },
   },
   nitro: {
     preset: 'vercel',
+    storage: {},
   },
 
   mdc: {
@@ -94,12 +96,11 @@ export default defineNuxtConfig({
   },
 
   content: {
-    // watch: {
-    //   enabled: true,
-    //   port: 4000,
-    //   showURL: true,
-    // },
-
+    database: {
+      type: 'libsql',
+      url: process.env.DATABASE_URL!,
+      authToken: process.env.DATABASE_AUTH_TOKEN!,
+    },
     preview: {
       api: 'https://api.nuxt.studio',
       dev: true,
