@@ -71,6 +71,6 @@ export default defineNuxtConfig({
     "/portfolio": { ssr: false },
   },
   nitro: {
-    preset: "vercel",
+    preset: "vercel-static",
   },
 });
