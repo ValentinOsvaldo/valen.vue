@@ -98,8 +98,8 @@ export default defineNuxtConfig({
   content: {
     database: {
       type: 'libsql',
-      url: process.env.DATABASE_URL!,
-      authToken: process.env.DATABASE_AUTH_TOKEN!,
+      url: process.env.TURSO_DATABASE_URL!,
+      authToken: process.env.TURSO_AUTH_TOKEN!,
     },
     preview: {
       api: 'https://api.nuxt.studio',
