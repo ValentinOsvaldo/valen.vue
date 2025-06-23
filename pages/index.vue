@@ -1,6 +1,16 @@
 <script lang="ts" setup>
 useSeoMeta({
   title: "Valen.Vue - Developer",
+  description:
+    "My goal is to create innovative and user-friendly applications that meet your needs and exceed your expectations.",
+  ogImage: "https://valen-vue.vercel.app/og-image.png",
+  twitterImage: "https://valen-vue.vercel.app/og-image.png",
+  ogUrl: "https://valen-vue.vercel.app",
+  author: "Osvaldo Valentin Garcia",
+  ogLocale: "en_US",
+  twitterTitle: "Valen.Vue - Developer",
+  ogType: "website",
+  twitterCard: "summary_large_image",
 });
 </script>
 
@@ -42,12 +52,12 @@ useSeoMeta({
         <div class="flex items-center justify-center gap-4 flex-row mt-4">
           <NuxtLink to="mailto:valentingarcia.osvaldo@gmail.com">
             <UButton leading-icon="i-lucide-mail" size="lg">
-              {{ $t('home.hero.mail') }}
+              {{ $t("home.hero.mail") }}
             </UButton>
           </NuxtLink>
           <NuxtLink to="/portfolio">
             <UButton leading-icon="i-lucide-briefcase" size="lg" variant="soft">
-              {{ $t('home.hero.portfolio') }}
+              {{ $t("home.hero.portfolio") }}
             </UButton>
           </NuxtLink>
         </div>

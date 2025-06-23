@@ -7,11 +7,13 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@nuxt/ui",
-    "@nuxt/test-utils",
     "@nuxtjs/i18n",
+    "@nuxt/test-utils",
   ],
 
   i18n: {
+    langDir: "locales",
+    lazy: true,
     strategy: "no_prefix",
     baseUrl: "https://valen.vue",
     locales: [
@@ -46,4 +48,23 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
   ssr: true,
+
+  app: {
+    head: {
+      title: "Valen.Vue - Developer",
+    },
+    viewTransition: "always",
+  },
+  // nitro: {
+  //   prerender: {
+  //     routes: ["/", "/portfolio"],
+  //   },
+  // },
+  future: {
+    compatibilityVersion: 4,
+  },
+  routeRules: {
+    "/": { prerender: true },
+    "/portfolio": { prerender: true },
+  },
 });

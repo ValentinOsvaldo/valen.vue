@@ -1,32 +1,22 @@
 <script lang="ts" setup>
-import { generateResumeEn } from '~/helpers/resume.generate';
-
 useSeoMeta({
   title: "Valen.Vue - Portfolio",
 });
 
-const { locale } = useI18n();
-
 type Skill = "front" | "mobile" | "back" | "tools";
 
-const skillsSelected = ref<Skill[]>(["back", "front", "mobile", "tools"]);
-
-const skills = reactive<Record<Skill, string[]>>({
+const skills = computed<Record<Skill, string[]>>(() => ({
   front: ["Javascript", "Typescript", "Vue", "React", "Next.js", "Nuxt.js"],
   mobile: ["React Native", "Expo", "Flutter"],
   back: ["NestJs"],
   tools: ["Git", "REST APIs", "Tailwind CSS"],
-});
+}));
 </script>
 
 <template>
   <UContainer as="main" class="space-y-8 max-w-4xl mb-16">
     <section>
-      <UButton
-        :label="$t('portfolio.resume.generate')"
-        color="primary"
-        @click="generateResumeEn(locale)"
-      />
+      <PortfolioGenerateResume />
     </section>
 
     <section class="mt-8">
@@ -90,31 +80,16 @@ const skills = reactive<Record<Skill, string[]>>({
 
       <hr class="h-px my-2 bg-accented border-0" />
 
-      <div class="flex flex-row flex-wrap gap-2 mb-4">
-        <UButton
-          v-for="item in ['back', 'front', 'mobile', 'tools'] as Array<Skill>"
-          :key="item"
-          :label="item"
-          :color="skillsSelected.includes(item) ? 'primary' : 'neutral'"
-          variant="soft"
-          size="lg"
-          @click="
-            skillsSelected.includes(item)
-              ? skillsSelected.splice(skillsSelected.indexOf(item), 1)
-              : skillsSelected.push(item)
-          "
-          class="capitalize"
-        />
-      </div>
       <div class="flex flex-row flex-wrap gap-2">
-        <template
-          v-for="collection in Object.entries(skills).filter((collection) =>
-            skillsSelected.includes(collection[0] as Skill),
-          )"
-        >
-          <template v-for="skill in collection[1]">
-            <UBadge :label="skill" color="primary" variant="subtle" size="lg" />
-          </template>
+        <template v-for="[group, list] in Object.entries(skills)" :key="group">
+          <UBadge
+            v-for="skill in list"
+            :key="skill"
+            :label="skill"
+            color="primary"
+            variant="subtle"
+            size="lg"
+          />
         </template>
       </div>
     </section>
@@ -128,9 +103,9 @@ const skills = reactive<Record<Skill, string[]>>({
 
       <ol>
         <li
-          v-for="(project, index) in ($tm(
+          v-for="(project, index) in $tm(
             'portfolio.personalProjects.items',
-          ) as any[])"
+          ) as any[]"
           :key="index"
         >
           <h3 class="text-lg font-semibold text-default">

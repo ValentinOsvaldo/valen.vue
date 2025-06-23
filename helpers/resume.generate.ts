@@ -1,14 +1,37 @@
-// resume.generate.ts
-
-import pdfMake from "pdfmake/build/pdfmake";
-import pdfFonts from "pdfmake/build/vfs_fonts";
-import { resumeContentEn, resumeContentEs } from "./resume.content";
 import type { TDocumentDefinitions } from "pdfmake/interfaces";
+import { resumeContentEn, resumeContentEs } from "./resume.content";
+import robotoRegularUri from "~/assets/fonts/Roboto-Regular.ttf?inline";
+import robotoItalicUri from "~/assets/fonts/Roboto-Italic.ttf?inline";
+import robotoBoldUri from "~/assets/fonts/Roboto-Bold.ttf?inline";
+import robotoBoldItalicUri from "~/assets/fonts/Roboto-BoldItalic.ttf?inline";
 
-pdfMake.vfs = pdfFonts.vfs;
+export async function generateResume(lang: "es" | "en" = "en") {
+  if (!process.client) return;
 
-export function generateResumeEn(lang: 'es' | 'en' = 'en') {
-  const c = lang === 'es' ? resumeContentEs : resumeContentEn;
+  // Dynamic load ⇒ nothing from pdfmake ever reaches the server
+  const [{ default: pdfMake }, { default: pdfFonts }] = await Promise.all([
+    import("pdfmake/build/pdfmake"),
+    import("pdfmake/build/vfs_fonts"),
+  ]);
+
+  pdfMake.vfs = {
+    ...pdfFonts.vfs,
+    "Roboto-Regular.ttf": robotoRegularUri.split(',')[1]!,
+    "Roboto-Italic.ttf": robotoItalicUri.split(',')[1]!,
+    "Roboto-Bold.ttf": robotoBoldUri.split(',')[1]!,
+    "Roboto-BoldItalic.ttf": robotoBoldItalicUri.split(',')[1]!,
+  };
+
+  pdfMake.fonts = {
+    Roboto: {
+      normal: "Roboto-Regular.ttf",
+      bold: "Roboto-Bold.ttf",
+      italics: "Roboto-Italic.ttf",
+      bolditalics: "Roboto-BoldItalic.ttf",
+    },
+  };
+
+  const c = lang === "es" ? resumeContentEs : resumeContentEn;
 
   const docDefinition: TDocumentDefinitions = {
     content: [
@@ -189,10 +212,19 @@ export function generateResumeEn(lang: 'es' | 'en' = 'en') {
       },
     },
 
-    defaultStyle: {},
+    defaultStyle: {
+      font: "Roboto",
+    },
 
     pageMargins: [40, 50, 40, 50],
   };
 
-  pdfMake.createPdf(docDefinition).download(lang === 'es' ? "Osvaldo_Valentin_Garcia_CV.pdf" : "Osvaldo_Valentin_Resume.pdf");
+  // Esto solo se ejecutará en el navegador
+  pdfMake
+    .createPdf(docDefinition)
+    .download(
+      lang === "es"
+        ? "Osvaldo_Valentin_Garcia_CV.pdf"
+        : "Osvaldo_Valentin_Resume.pdf",
+    );
 }
