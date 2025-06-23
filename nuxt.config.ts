@@ -1,29 +1,30 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2025-05-15",
+  compatibilityDate: '2025-05-15',
   modules: [
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "@nuxt/icon",
-    "@nuxt/image",
-    "@nuxt/ui",
-    "@nuxtjs/i18n",
-    "@nuxt/test-utils",
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxt/ui',
+    '@nuxtjs/i18n',
+    '@nuxt/test-utils',
+    '@nuxt/content',
   ],
 
   i18n: {
-    langDir: "locales",
+    langDir: 'locales',
     lazy: true,
-    strategy: "no_prefix",
-    baseUrl: "https://valen.vue",
+    strategy: 'no_prefix',
+    baseUrl: 'https://valen.vue',
     locales: [
-      { code: "en", name: "English", file: "en.json" },
-      { code: "es", name: "Spanish", file: "es.json" },
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'es', name: 'Spanish', file: 'es.json' },
     ],
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: "i18n_redirected",
-      redirectOn: "root",
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
     },
     bundle: {
       optimizeTranslationDirective: false,
@@ -33,12 +34,12 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
-        name: "Poppins",
-        provider: "google",
+        name: 'Poppins',
+        provider: 'google',
       },
       {
-        name: "Raleway",
-        provider: "google",
+        name: 'Raleway',
+        provider: 'google',
       },
     ],
   },
@@ -49,23 +50,79 @@ export default defineNuxtConfig({
     autoImport: true,
   },
 
-  css: ["~/assets/css/main.css"],
+  css: ['~/assets/css/main.css'],
   ssr: true,
 
   app: {
     head: {
-      title: "Valen.Vue - Developer",
+      title: 'Valen.Vue - Developer',
     },
-    viewTransition: "always",
+    viewTransition: 'always',
+    pageTransition: {
+      name: 'slide',
+      mode: 'out-in',
+    },
   },
   future: {
     compatibilityVersion: 4,
   },
   routeRules: {
-    "/": { prerender: true },
-    "/portfolio": { ssr: false },
+    '/': { prerender: true },
+    '/portfolio': { ssr: false },
   },
   nitro: {
-    preset: "vercel",
+    preset: 'vercel',
+  },
+
+  mdc: {
+    components: {
+      prose: true,
+    },
+    headings: {
+      anchorLinks: {
+        h1: false,
+        h2: false,
+        h3: false,
+        h4: false,
+        h5: false,
+        h6: false,
+      },
+    },
+    // highlight: {
+    //   theme: "dracula",
+    // },
+  },
+
+  content: {
+    // watch: {
+    //   enabled: true,
+    //   port: 4000,
+    //   showURL: true,
+    // },
+
+    preview: {
+      api: 'https://api.nuxt.studio',
+      dev: true,
+      gitInfo: {
+        name: 'valen.vue',
+        owner: 'ValentinOsvaldo',
+        url: 'https://github.com/ValentinOsvaldo/valen.vue.git',
+      },
+    },
+    renderer: {
+      anchorLinks: false,
+    },
+  },
+
+  experimental: {
+    viewTransition: true,
+  },
+
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+      },
+    },
   },
 });
