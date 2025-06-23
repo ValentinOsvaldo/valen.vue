@@ -3,8 +3,8 @@
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+    <Analytics />
   </UApp>
-  <Analytics />
 </template>
 
 <script lang="ts" setup>

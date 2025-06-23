@@ -58,11 +58,6 @@ export default defineNuxtConfig({
     },
     viewTransition: "always",
   },
-  // nitro: {
-  //   prerender: {
-  //     routes: ["/", "/portfolio"],
-  //   },
-  // },
   future: {
     compatibilityVersion: 4,
   },
