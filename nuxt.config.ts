@@ -70,4 +70,7 @@ export default defineNuxtConfig({
     "/": { prerender: true },
     "/portfolio": { ssr: false },
   },
+  nitro: {
+    preset: "vercel",
+  },
 });
