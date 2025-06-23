@@ -81,7 +81,7 @@ const skills = computed<Record<Skill, string[]>>(() => ({
       <hr class="h-px my-2 bg-accented border-0" />
 
       <div class="flex flex-row flex-wrap gap-2">
-        <template v-for="[group, list] in Object.entries(skills)" :key="group">
+        <!-- <template v-for="[group, list] in Object.entries(skills)" :key="group">
           <UBadge
             v-for="skill in list"
             :key="skill"
@@ -90,7 +90,7 @@ const skills = computed<Record<Skill, string[]>>(() => ({
             variant="subtle"
             size="lg"
           />
-        </template>
+        </template> -->
       </div>
     </section>
 
@@ -103,9 +103,9 @@ const skills = computed<Record<Skill, string[]>>(() => ({
 
       <ol>
         <li
-          v-for="(project, index) in $tm(
+          v-for="(project, index) in ($tm(
             'portfolio.personalProjects.items',
-          ) as any[]"
+          ) as any[])"
           :key="index"
         >
           <h3 class="text-lg font-semibold text-default">
@@ -125,9 +125,9 @@ const skills = computed<Record<Skill, string[]>>(() => ({
 
       <ol class="relative border-s border-border border-accented">
         <li
-          v-for="(education, index) in $tm(
+          v-for="(education, index) in ($tm(
             'portfolio.education.items',
-          ) as any[]"
+          ) as any[])"
           :key="index"
           class="mb-10 ms-4"
         >

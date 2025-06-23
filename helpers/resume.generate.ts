@@ -6,7 +6,7 @@ import robotoBoldUri from "~/assets/fonts/Roboto-Bold.ttf?inline";
 import robotoBoldItalicUri from "~/assets/fonts/Roboto-BoldItalic.ttf?inline";
 
 export async function generateResume(lang: "es" | "en" = "en") {
-  if (!process.client) return;
+  if (import.meta.server) return;
 
   // Dynamic load ⇒ nothing from pdfmake ever reaches the server
   const [{ default: pdfMake }, { default: pdfFonts }] = await Promise.all([

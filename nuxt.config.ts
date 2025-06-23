@@ -25,6 +25,9 @@ export default defineNuxtConfig({
       cookieKey: "i18n_redirected",
       redirectOn: "root",
     },
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
 
   fonts: {
@@ -65,6 +68,6 @@ export default defineNuxtConfig({
   },
   routeRules: {
     "/": { prerender: true },
-    "/portfolio": { prerender: true },
+    "/portfolio": { ssr: false },
   },
 });
