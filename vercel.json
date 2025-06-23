@@ -1,5 +1,0 @@
-{
-  "buildCommand": "nuxi build",
-  "outputDirectory": ".output",
-  "framework": "nuxt"
-}
