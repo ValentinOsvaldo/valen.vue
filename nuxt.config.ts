@@ -97,9 +97,8 @@ export default defineNuxtConfig({
 
   content: {
     database: {
-      type: 'libsql',
-      url: process.env.TURSO_DATABASE_URL!,
-      authToken: process.env.TURSO_AUTH_TOKEN!,
+      type: 'postgres',
+      url: process.env.DATABASE_URL!,
     },
     preview: {
       api: 'https://api.nuxt.studio',
