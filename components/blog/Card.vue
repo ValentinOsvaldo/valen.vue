@@ -1,3 +1,42 @@
+<script lang="ts" setup>
+import { useClipboard } from '~/composables/useClipboard';
+
+const { t } = useI18n()
+
+const toast = useToast()
+
+interface Props {
+  author: any;
+  title: string;
+  description: string;
+  date: string;
+  slug: any;
+  category: any;
+  image?: string;
+}
+
+const props = defineProps<Props>();
+
+const dateFormat = computed(() => new Date(props.date).toLocaleDateString());
+
+const img = computed(() => props.image || `https://valen-vue.vercel.app/og-image.png`);
+
+const { copy } = useClipboard();
+
+const onCopyPath = async (slug: string) => {
+  if (!import.meta.server) {
+    await copy(`${window.location.origin}/blog/${slug}`);
+  } else {
+    await copy(`https://valen-vue.vercel.app/blog/${slug}`);
+  }
+
+  toast.add({
+    title: t('blog.copy-message'),    
+  });
+};
+</script>
+
+
 <template>
   <div
     class="transition rounded-lg overflow-hidden w-full max-w-[500px] bg-elevated hover:scale-105"
@@ -27,25 +66,8 @@
     <footer class="flex items-center justify-between p-4">
       <UButton variant="subtle" :to="`/blog/${slug}`"> Read more </UButton>
 
-      <UButton variant="ghost" icon="i-lucide-share" />
+      <UButton variant="ghost" icon="i-lucide-share" @click="onCopyPath(slug)" />
     </footer>
   </div>
 </template>
 
-<script lang="ts" setup>
-interface Props {
-  author: any;
-  title: string;
-  description: string;
-  date: string;
-  slug: any;
-  category: any;
-  image?: string;
-}
-
-const props = defineProps<Props>();
-
-const dateFormat = computed(() => new Date(props.date).toLocaleDateString());
-
-const img = computed(() => props.image || `https://valen-vue.vercel.app/og-image.png`);
-</script>

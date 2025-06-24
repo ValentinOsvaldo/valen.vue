@@ -81,5 +81,8 @@
         }
       ]
     }
+  },
+  "blog": {
+    "copy-message": "Link copied to clipboard"
   }
 }
