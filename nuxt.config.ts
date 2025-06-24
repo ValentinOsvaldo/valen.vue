@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/i18n',
     '@nuxt/test-utils',
-    '@nuxt/content',
+    // '@nuxt/content',
   ],
 
   i18n: {
@@ -75,40 +75,40 @@ export default defineNuxtConfig({
     preset: 'vercel',
   },
 
-  content: {
-    database: {
-      type: 'postgres',
-      url: process.env.POSTGRES_URL!,
-    },
-    preview: {
-      api: 'https://api.nuxt.studio',
-      dev: true,
-      gitInfo: {
-        name: 'valen.vue',
-        owner: 'ValentinOsvaldo',
-        url: 'https://github.com/ValentinOsvaldo/valen.vue.git',
-      },
-    },
-    renderer: {
-      anchorLinks: false,
-    },
-  },
+  // content: {
+  //   database: {
+  //     type: 'postgres',
+  //     url: process.env.POSTGRES_URL!,
+  //   },
+  //   preview: {
+  //     api: 'https://api.nuxt.studio',
+  //     dev: true,
+  //     gitInfo: {
+  //       name: 'valen.vue',
+  //       owner: 'ValentinOsvaldo',
+  //       url: 'https://github.com/ValentinOsvaldo/valen.vue.git',
+  //     },
+  //   },
+  //   renderer: {
+  //     anchorLinks: false,
+  //   },
+  // },
 
-  mdc: {
-    components: {
-      prose: true,
-    },
-    headings: {
-      anchorLinks: {
-        h1: false,
-        h2: false,
-        h3: false,
-        h4: false,
-        h5: false,
-        h6: false,
-      },
-    },
-  },
+  // mdc: {
+  //   components: {
+  //     prose: true,
+  //   },
+  //   headings: {
+  //     anchorLinks: {
+  //       h1: false,
+  //       h2: false,
+  //       h3: false,
+  //       h4: false,
+  //       h5: false,
+  //       h6: false,
+  //     },
+  //   },
+  // },
 
   experimental: {
     viewTransition: true,

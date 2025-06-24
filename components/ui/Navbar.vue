@@ -7,14 +7,16 @@ const items = computed<NavigationMenuItem[]>(() => [
   {
     label: t("navbar.home"),
     href: "/",
+    onSelect() {
+      isOpen.value = false;
+    }
   },
   {
     label: t("navbar.portfolio"),
     href: "/portfolio",
-  },
-  {
-    label: t("navbar.blog"),
-    href: "/blog",
+    onSelect() {
+      isOpen.value = false;
+    }
   },
 ]);
 const isOpen = ref(false);
