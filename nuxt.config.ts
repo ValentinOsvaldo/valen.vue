@@ -80,6 +80,9 @@ export default defineNuxtConfig({
       type: 'postgres',
       url: process.env.POSTGRES_URL!,
     },
+    experimental: {
+      sqliteConnector: 'native',
+    },
     preview: {
       api: 'https://api.nuxt.studio',
       dev: true,
