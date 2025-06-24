@@ -5,6 +5,7 @@ date: 2025-06-22
 author: Osvaldo Valentin
 slug: vue-vs-react
 category: frontend
+image: https://www.mindinventory.com/blog/wp-content/uploads/2023/11/react-vs-vue.webp
 ---
 
 # Why I think Vue is better than React
@@ -14,4 +15,3 @@ I want to start this post by saying, this is only my personal opinion and I feel
 ## Introduction
 
 I started coding on React in 2022, and I have to say, it was a great experience. I was able to build some amazing things with React, but I also had some issues with it. I started to notice that React was not the best choice for me, and I started to look for other options. I found Vue, and I was blown away by it. I started to use it for my projects, and I was able to build some amazing things with it. I also started to use it for my personal projects, and I was able to build some amazing things with it.
-
