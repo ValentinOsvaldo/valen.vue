@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   modules: [
@@ -9,14 +10,13 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/i18n',
     '@nuxt/test-utils',
-    '@nuxt/content',
+    // '@nuxt/content',
   ],
 
   i18n: {
     langDir: 'locales',
     lazy: true,
     strategy: 'no_prefix',
-    baseUrl: 'https://valen.vue',
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'es', name: 'Spanish', file: 'es.json' },
@@ -73,7 +73,6 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'vercel',
-    storage: {},
   },
 
   mdc: {
