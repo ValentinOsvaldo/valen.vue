@@ -13,6 +13,18 @@ const { data: post } = await useAsyncData(path.value, () => {
     .where("slug", "=", slug.value)
     .first();
 });
+
+useSeoMeta({
+  title: post.value?.title,
+  description: post.value?.description,
+  ogImage: post.value?.image,
+  twitterImage: post.value?.image,
+  author: post.value?.author,
+  ogLocale: locale.value,
+  twitterTitle: post.value?.title,
+  ogType: "article",
+  twitterCard: "summary_large_image",
+})
 </script>
 
 <template>
