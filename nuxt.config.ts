@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/i18n',
     '@nuxt/test-utils',
-    // '@nuxt/content',
+    '@nuxt/content',
   ],
 
   i18n: {
@@ -69,29 +69,10 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true },
     '/portfolio': { ssr: false },
-    // '/blog/**': { prerender: true },
+    '/blog/**': { prerender: true },
   },
   nitro: {
     preset: 'vercel',
-  },
-
-  mdc: {
-    components: {
-      prose: true,
-    },
-    headings: {
-      anchorLinks: {
-        h1: false,
-        h2: false,
-        h3: false,
-        h4: false,
-        h5: false,
-        h6: false,
-      },
-    },
-    // highlight: {
-    //   theme: "dracula",
-    // },
   },
 
   content: {
@@ -110,6 +91,22 @@ export default defineNuxtConfig({
     },
     renderer: {
       anchorLinks: false,
+    },
+  },
+
+  mdc: {
+    components: {
+      prose: true,
+    },
+    headings: {
+      anchorLinks: {
+        h1: false,
+        h2: false,
+        h3: false,
+        h4: false,
+        h5: false,
+        h6: false,
+      },
     },
   },
 
