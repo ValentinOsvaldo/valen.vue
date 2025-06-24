@@ -16,7 +16,7 @@ const { data: post } = await useAsyncData(path.value, () => {
 </script>
 
 <template>
-  <UContainer class="max-w-4xl mx-auto">
+  <UContainer class="max-w-4xl mx-auto my-8">
     <ContentRenderer v-if="post" :value="post" class="post" />
     <div v-else>Post not found</div>
   </UContainer>

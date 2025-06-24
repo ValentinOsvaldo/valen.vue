@@ -21,7 +21,7 @@ useSeoMeta({
 
 <template>
   <UContainer as="main" class="mt-8">
-    <h1 class="text-4xl font-bold">Blog</h1>
+    <h1 class="text-4xl font-bold mb-8">Blog</h1>
     
     <BlogCard
       v-for="post in posts"
