@@ -47,5 +47,5 @@ const props = defineProps<Props>();
 
 const dateFormat = computed(() => new Date(props.date).toLocaleDateString());
 
-const img = computed(() => props.image || `og-image.png`);
+const img = computed(() => props.image || `https://valen-vue.vercel.app/og-image.png`);
 </script>
