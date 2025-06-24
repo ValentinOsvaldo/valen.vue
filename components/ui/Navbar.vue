@@ -16,6 +16,13 @@ const items = computed<NavigationMenuItem[]>(() => [
     href: "/portfolio",
     onSelect() {
       isOpen.value = false;
+    },
+  },
+  {
+    label: 'Blog',
+    href: "/blog",
+    onSelect() {
+      isOpen.value = false;
     }
   },
 ]);
@@ -31,7 +38,7 @@ const isOpen = ref(false);
       </h1>
 
       <div class="flex items-center gap-2 flex-row">
-        <UNavigationMenu :items="items" class="hidden md:block" />
+        <UNavigationMenu :items="items" class="hidden lg:block" />
         <UiColorModeButton />
         <UButton
           variant="subtle"

@@ -3,7 +3,7 @@
     class="transition rounded-lg overflow-hidden w-full max-w-[500px] bg-elevated hover:scale-105"
   >
     <header class="relative">
-      <NuxtImg :src="'/og-image.png'" class="w-full h-[250px] object-cover" />
+      <NuxtImg :src="img" :alt="title" class="w-full h-[250px] object-cover" />
 
       <UBadge :label="category" color="primary" variant="solid" class="absolute top-8 left-4 z-10" />
     </header>
@@ -40,9 +40,12 @@ interface Props {
   date: string;
   slug: any;
   category: any;
+  image?: string;
 }
 
 const props = defineProps<Props>();
 
 const dateFormat = computed(() => new Date(props.date).toLocaleDateString());
+
+const img = computed(() => props.image || `og-image.png`);
 </script>

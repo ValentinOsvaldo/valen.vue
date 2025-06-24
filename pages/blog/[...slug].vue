@@ -1,12 +1,16 @@
 <script lang="ts" setup>
-const { slug } = useRoute().params;
+import { withLeadingSlash, joinURL } from 'ufo'
 
+const route= useRoute();
 const { locale } = useI18n();
 
-const { data: post } = await useAsyncData("post", () => {
+const slug = computed(() => Array.isArray(route.params.slug) ? route.params.slug as string[] : [route.params.slug as string])
+const path = computed(() => withLeadingSlash(joinURL(locale.value, ...slug.value)))
+
+const { data: post } = await useAsyncData(path.value, () => {
   return queryCollection("content")
     .where("stem", "LIKE", "%." + locale.value)
-    .where("slug", "=", slug)
+    .where("slug", "=", slug.value)
     .first();
 });
 </script>

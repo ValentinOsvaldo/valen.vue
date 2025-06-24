@@ -16,7 +16,8 @@ export default defineNuxtConfig({
   i18n: {
     langDir: 'locales',
     lazy: true,
-    strategy: 'no_prefix',
+    defaultLocale: 'en',
+    strategy: 'prefix',
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'es', name: 'Spanish', file: 'es.json' },
@@ -69,7 +70,6 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true },
     '/portfolio': { ssr: false },
-    '/blog/**': { prerender: true },
   },
   nitro: {
     preset: 'vercel',

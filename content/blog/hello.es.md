@@ -1,5 +1,0 @@
----
-slug: hello
----
-
-# Hola mundo
