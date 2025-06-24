@@ -34,5 +34,10 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/pdfmake": "^0.2.11",
     "@types/pg": "^8.15.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
   }
 }
