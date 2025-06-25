@@ -42,6 +42,10 @@ export default defineNuxtConfig({
         name: 'Raleway',
         provider: 'google',
       },
+      {
+        name: 'Geist',
+        provider: 'google',
+      }
     ],
   },
 

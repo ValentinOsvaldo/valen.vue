@@ -6,18 +6,18 @@ const { t } = useI18n()
 const toast = useToast()
 
 interface Props {
-  author: any;
+  author: string;
   title: string;
   description: string;
   date: string;
-  slug: any;
-  category: any;
+  slug: string;
+  category: string;
   image?: string;
 }
 
 const props = defineProps<Props>();
 
-const dateFormat = computed(() => new Date(props.date).toLocaleDateString());
+const dateFormat = computed(() => Intl.DateTimeFormat().format(new Date(props.date)));
 
 const img = computed(() => props.image || `https://valen-vue.vercel.app/og-image.png`);
 
@@ -44,19 +44,20 @@ const onCopyPath = async (slug: string) => {
     <header class="relative">
       <NuxtImg :src="img" :alt="title" class="w-full h-[200px] lg:h-[250px] object-cover" />
 
+      
       <UBadge :label="category" color="primary" variant="solid" class="absolute top-8 left-4 z-10" />
     </header>
 
     <div class="p-4">
       <h3 class="text-lg font-semibold mb-2 text-balance">{{ title }}</h3>
-      <p class="text-muted mb-2 text-pretty">{{ description }}</p>
+      <p class="text-muted mb-2 text-pretty">{{ description.slice(0, 100) }}...</p>
 
       <div class="flex items-center gap-4 text-dimmed text-sm">
         <span class="flex items-center gap-2">
           <UIcon name="i-lucide-user" class="size-4" />
           {{ author }}
         </span>
-        <span class="flex items-center gap-2">
+        <span class="flex items-center gap-2" v-if="date">
           <UIcon name="i-lucide-calendar" class="size-4" />
           {{ dateFormat }}
         </span>

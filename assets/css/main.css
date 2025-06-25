@@ -7,6 +7,7 @@
 
 @theme {
   --font-sans: 'Raleway', 'Poppins', Roboto, sans-serif;
+  --font-geist: 'Geist', sans-serif;
 }
 
 html,
@@ -16,26 +17,26 @@ body {
 
 @layer components {
   .post {
-    @apply text-neutral-700/90 dark:text-neutral-300 leading-relaxed;
+    @apply text-neutral-700/90 dark:text-neutral-300 leading-relaxed font-geist text-lg;
 
     h1 {
-      @apply text-2xl sm:text-3xl lg:text-5xl text-zinc-900 dark:text-zinc-100 italic font-[600] mb-6 mt-8;
+      @apply text-4xl sm:text-5xl lg:text-6xl text-zinc-900 dark:text-zinc-100 italic font-[600] mb-6 mt-8;
     }
 
     h2 {
-      @apply text-xl sm:text-2xl text-zinc-900 dark:text-zinc-100 mb-4 mt-8;
+      @apply text-3xl sm:text-5xl text-zinc-900 dark:text-zinc-100 mb-4 mt-8;
     }
 
     h3 {
-      @apply text-lg sm:text-xl text-zinc-900 dark:text-zinc-100 mb-4 mt-6;
+      @apply text-2xl sm:text-4xl text-zinc-900 dark:text-zinc-100 mb-4 mt-6;
     }
 
     h4 {
-      @apply text-base sm:text-lg text-zinc-900 dark:text-zinc-100 mb-4 mt-6;
+      @apply text-xl sm:text-2xl text-zinc-900 dark:text-zinc-100 mb-4 mt-6;
     }
 
     h5 {
-      @apply text-base text-zinc-900 dark:text-zinc-100 mb-4 mt-6;
+      @apply text-lg sm:text-xl text-zinc-900 dark:text-zinc-100 mb-4 mt-6;
     }
 
     p {
@@ -50,9 +51,9 @@ body {
       @apply text-sm sm:text-base text-zinc-900 dark:text-zinc-100 my-4 p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg overflow-x-auto;
     }
 
-    code {
+    /* code {
       @apply px-1.5 py-1 text-zinc-900 dark:text-zinc-100 text-sm bg-neutral-100 dark:bg-neutral-800 rounded;
-    }
+    } */
 
     strong {
       @apply text-neutral-900 dark:text-neutral-100 font-[500];
@@ -93,6 +94,30 @@ body {
 
     figcaption {
       @apply text-sm text-neutral-500 dark:text-neutral-400 mt-2;
+    }
+
+    table {
+      @apply w-full border border-muted p-2 rounded-lg;
+    }
+
+    tbody {
+      @apply text-muted;
+    }
+
+    th {
+      @apply bg-muted font-semibold p-2;
+    }
+
+    td {
+      @apply p-2;
+    }
+
+    tr {
+      @apply border-b border-muted;
+    }
+
+    strong {
+      @apply text-inherit font-semibold;
     }
   }
 }

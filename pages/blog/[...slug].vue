@@ -8,7 +8,7 @@ const slug = computed(() => Array.isArray(route.params.slug) ? route.params.slug
 const path = computed(() => withLeadingSlash(joinURL(locale.value, ...slug.value)))
 
 const { data: post } = await useAsyncData(path.value, () => {
-  return queryCollection("content")
+  return queryCollection("blog")
     .where("stem", "LIKE", "%." + locale.value)
     .where("slug", "=", slug.value)
     .first();

@@ -1,7 +1,7 @@
 ---
 title: Cómo construí este blog usando Nuxt
 description: Una publicación sobre cómo creé este blog desde cero usando Nuxt 3, Tailwind CSS y Nuxt Content.
-date: 2025-06-24
+date: 2025-06-23
 author: Osvaldo Valentín
 slug: how-i-built-my-blog
 category: desarrollo

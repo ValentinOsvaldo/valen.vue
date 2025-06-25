@@ -9,8 +9,9 @@ const slug = computed(() => Array.isArray(route.params.slug) ? route.params.slug
 const path = computed(() => withLeadingSlash(joinURL(locale.value, ...slug.value)))
 
 const { data: posts } = await useAsyncData(path.value, () => {
-  return queryCollection("content")
+  return queryCollection("blog")
     .where("stem", "LIKE", "%." + locale.value)
+    .order('date', 'DESC')
     .all();
 });
 
@@ -32,6 +33,7 @@ useSeoMeta({
       :date="post.date"
       :slug="post.slug"
       :category="post.category"
+      :image="post.image"
       />
     </section>
   </UContainer>
