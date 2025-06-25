@@ -70,6 +70,7 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true },
     '/portfolio': { ssr: false },
+    '/blog/**': { prerender: true },
   },
   nitro: {
     preset: 'vercel',
@@ -97,21 +98,21 @@ export default defineNuxtConfig({
     },
   },
 
-  // mdc: {
-  //   components: {
-  //     prose: true,
-  //   },
-  //   headings: {
-  //     anchorLinks: {
-  //       h1: false,
-  //       h2: false,
-  //       h3: false,
-  //       h4: false,
-  //       h5: false,
-  //       h6: false,
-  //     },
-  //   },
-  // },
+  mdc: {
+    components: {
+      prose: true,
+    },
+    headings: {
+      anchorLinks: {
+        h1: false,
+        h2: false,
+        h3: false,
+        h4: false,
+        h5: false,
+        h6: false,
+      },
+    },
+  },
 
   experimental: {
     viewTransition: true,

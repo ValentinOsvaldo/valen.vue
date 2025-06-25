@@ -20,7 +20,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <UContainer as="main" class="mt-8">
+  <UContainer as="main" class="my-8">
     <h1 class="text-4xl font-bold mb-8">Blog</h1>
     
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

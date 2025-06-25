@@ -7,7 +7,14 @@ slug: how-i-built-my-blog
 category: desarrollo
 ---
 
-# Cómo construí este blog usando Nuxt
+::blog-header
+#default
+Cómo construí este blog usando Nuxt
+#date
+2025-06-24
+#author
+Osvaldo Valentín
+::
 
 Después de varios meses queriendo compartir ideas, aprendizajes y proyectos personales, por fin decidí construir mi propio blog desde cero. Como desarrollador front-end, quería algo que no solo se viera bien, sino que también fuera rápido, escalable y fácil de mantener. La elección fue clara: **Nuxt 3**.
 

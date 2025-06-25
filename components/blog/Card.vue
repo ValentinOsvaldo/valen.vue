@@ -42,7 +42,7 @@ const onCopyPath = async (slug: string) => {
     class="transition rounded-lg overflow-hidden w-full max-w-[500px] bg-elevated hover:scale-105"
   >
     <header class="relative">
-      <NuxtImg :src="img" :alt="title" class="w-full h-[250px] object-cover" />
+      <NuxtImg :src="img" :alt="title" class="w-full h-[200px] lg:h-[250px] object-cover" />
 
       <UBadge :label="category" color="primary" variant="solid" class="absolute top-8 left-4 z-10" />
     </header>

@@ -32,10 +32,12 @@ const isOpen = ref(false);
 <template>
   <header class="bg-default/10 backdrop-blur-2xl sticky top-0 z-50">
     <UContainer class="flex items-center justify-between px-4 py-3 relative z-50">
-      <h1 class="font-bold text-xl">
-        <span>Valen</span>
-        <span class="text-primary">.Vue</span>
-      </h1>
+      <NuxtLink to="/">
+        <h1 class="font-bold text-xl">
+          <span>Valen</span>
+          <span class="text-primary">.Vue</span>
+        </h1>
+      </NuxtLink>
 
       <div class="flex items-center gap-2 flex-row">
         <UNavigationMenu :items="items" class="hidden lg:block" />
