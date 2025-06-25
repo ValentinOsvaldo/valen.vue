@@ -66,7 +66,9 @@ const onCopyPath = async (slug: string) => {
     <footer class="flex items-center justify-between p-4">
       <UButton variant="subtle" :to="`/blog/${slug}`"> {{ $t('blog.read-more') }} </UButton>
 
-      <UButton variant="ghost" icon="i-lucide-share" @click="onCopyPath(slug)" />
+      <UTooltip text="Copy message">
+        <UButton variant="subtle" icon="i-lucide-share" @click="onCopyPath(slug)" class="cursor-pointer" />
+      </UTooltip>
     </footer>
   </div>
 </template>
