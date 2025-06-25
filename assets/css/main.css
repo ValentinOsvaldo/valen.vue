@@ -43,7 +43,7 @@ body {
     }
 
     a {
-      @apply text-blue-500 dark:text-blue-500 underline hover:text-blue-600;
+      @apply text-highlighted font-medium transition underline underline-offset-1;
     }
 
     pre {
@@ -51,7 +51,7 @@ body {
     }
 
     code {
-      @apply text-zinc-900 dark:text-zinc-100 text-sm bg-neutral-100 dark:bg-neutral-800 rounded;
+      @apply px-1.5 py-1 text-zinc-900 dark:text-zinc-100 text-sm bg-neutral-100 dark:bg-neutral-800 rounded;
     }
 
     strong {
