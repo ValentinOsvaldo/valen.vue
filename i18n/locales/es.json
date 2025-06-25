@@ -80,9 +80,10 @@
           "description": "Aplicación web desarrollada para gestionar elecciones gubernamentales a nivel local. Construida con React, TanStack Query, React Router y ShadCN UI."
         }
       ]
-    },
-    "blog": {
-      "copy-message": "Enlace en el portapapeles"
     }
+  },
+  "blog": {
+    "copy-message": "Enlace en el portapapeles",
+    "read-more": "Leer más"
   }
 }

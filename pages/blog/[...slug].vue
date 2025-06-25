@@ -17,8 +17,8 @@ const { data: post } = await useAsyncData(path.value, () => {
 useSeoMeta({
   title: post.value?.title,
   description: post.value?.description,
-  ogImage: post.value?.image,
-  twitterImage: post.value?.image,
+  ogImage: post.value?.image || "https://valen-vue.vercel.app/og-image.png",
+  twitterImage: post.value?.image || "https://valen-vue.vercel.app/og-image.png",
   author: post.value?.author,
   ogLocale: locale.value,
   twitterTitle: post.value?.title,

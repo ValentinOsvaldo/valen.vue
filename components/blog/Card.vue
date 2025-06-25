@@ -47,9 +47,9 @@ const onCopyPath = async (slug: string) => {
       <UBadge :label="category" color="primary" variant="solid" class="absolute top-8 left-4 z-10" />
     </header>
 
-    <div class="p-4 text-balance">
-      <h3 class="text-lg font-semibold mb-2">{{ title }}</h3>
-      <p class="text-muted mb-2">{{ description }}</p>
+    <div class="p-4">
+      <h3 class="text-lg font-semibold mb-2 text-balance">{{ title }}</h3>
+      <p class="text-muted mb-2 text-pretty">{{ description }}</p>
 
       <div class="flex items-center gap-4 text-dimmed text-sm">
         <span class="flex items-center gap-2">
@@ -64,7 +64,7 @@ const onCopyPath = async (slug: string) => {
     </div>
 
     <footer class="flex items-center justify-between p-4">
-      <UButton variant="subtle" :to="`/blog/${slug}`"> Read more </UButton>
+      <UButton variant="subtle" :to="`/blog/${slug}`"> {{ $t('blog.read-more') }} </UButton>
 
       <UButton variant="ghost" icon="i-lucide-share" @click="onCopyPath(slug)" />
     </footer>
