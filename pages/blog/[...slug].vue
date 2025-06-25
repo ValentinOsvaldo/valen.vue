@@ -29,6 +29,11 @@ useSeoMeta({
 
 <template>
   <UContainer class="max-w-4xl mx-auto my-8">
+    <nav class="mb-8">
+      <UButton variant="subtle" leading-icon="i-lucide-arrow-left" to="/blog">
+        {{ $t("blog.back") }}
+      </UButton>
+    </nav>
     <ContentRenderer v-if="post" :value="post" class="post" />
     <div v-else>Post not found</div>
   </UContainer>

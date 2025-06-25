@@ -1,5 +1,5 @@
 <template>
-  <header class="mt-16 mb-8">
+  <header class="mt-8 mb-8">
     <h1 class="text-4xl lg:text-6xl font-bold text-pretty not-italic">
       <slot mdc-unwrap="p" />
     </h1>

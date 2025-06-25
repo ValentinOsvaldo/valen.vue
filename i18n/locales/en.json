@@ -84,6 +84,7 @@
   },
   "blog": {
     "copy-message": "Link copied to clipboard",
-    "read-more": "Read more"
+    "read-more": "Read more",
+    "back": "Back"
   }
 }

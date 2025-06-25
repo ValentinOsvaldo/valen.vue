@@ -84,6 +84,7 @@
   },
   "blog": {
     "copy-message": "Enlace en el portapapeles",
-    "read-more": "Leer más"
+    "read-more": "Leer más",
+    "back": "Volver"
   }
 }

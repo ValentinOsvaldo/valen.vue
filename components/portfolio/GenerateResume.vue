@@ -22,6 +22,8 @@ async function handleGenerate () {
   <UButton
     :label="$t('portfolio.resume.generate')"
     color="primary"
+    variant="subtle"
+    size="lg"
     @click="handleGenerate"
   />
 </template>

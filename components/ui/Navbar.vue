@@ -34,7 +34,7 @@ const items = computed<NavigationMenuItem[]>(() => [
 </script>
 
 <template>
-  <header class="bg-default/10 backdrop-blur-2xl sticky top-0 z-50">
+  <header class="bg-default/10 backdrop-blur-lg sticky top-0 z-50">
     <UContainer class="flex items-center justify-between px-4 py-3 relative z-50">
       <NuxtLink to="/">
         <h1 class="font-bold text-xl">
@@ -50,9 +50,9 @@ const items = computed<NavigationMenuItem[]>(() => [
           variant="subtle"
           @click="setLocale(locale === 'en' ? 'es' : 'en')"
         >
-          {{ locale }}
+          {{ locale }}  
         </UButton>
-        <u-slideover :open="isOpen">
+        <u-slideover :open="isOpen" :close="{ onClick: () => {isOpen = false }}">
           <UButton
             icon="i-lucide-menu"
             variant="ghost"
