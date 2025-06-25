@@ -1,32 +1,36 @@
 <script lang="ts" setup>
 import type { NavigationMenuItem } from "@nuxt/ui";
+const route = useRoute();
 
 const { locale, setLocale, t } = useI18n();
 
+const isOpen = ref(false);
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: t("navbar.home"),
-    href: "/",
-    onSelect() {
+    href: "/" + locale.value,
+    onSelect: function () {
       isOpen.value = false;
-    }
+    },
+    active: route.path.split('/').length <= 2,
   },
   {
     label: t("navbar.portfolio"),
-    href: "/portfolio",
-    onSelect() {
+    href: "/" + locale.value + "/portfolio",
+    onSelect: function () {
       isOpen.value = false;
     },
+    active: route.path.includes("/portfolio"),
   },
   {
     label: 'Blog',
-    href: "/blog",
-    onSelect() {
+    href: "/" + locale.value + "/blog",
+    onSelect: function () {
       isOpen.value = false;
-    }
+    },
+    active: route.path.includes("/blog"),
   },
 ]);
-const isOpen = ref(false);
 </script>
 
 <template>
@@ -48,7 +52,7 @@ const isOpen = ref(false);
         >
           {{ locale }}
         </UButton>
-        <u-slideover>
+        <u-slideover :open="isOpen">
           <UButton
             icon="i-lucide-menu"
             variant="ghost"
