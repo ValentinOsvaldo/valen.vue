@@ -21,6 +21,8 @@ const dateFormat = computed(() => Intl.DateTimeFormat().format(new Date(props.da
 
 const img = computed(() => props.image || `https://valen-vue.vercel.app/og-image.png`);
 
+const descriptionComputed = computed(() => props.description.length > 100 ? `${props.description.slice(0, 100)}` : props.description);
+
 const { copy } = useClipboard();
 
 const onCopyPath = async (slug: string) => {
@@ -50,7 +52,7 @@ const onCopyPath = async (slug: string) => {
 
     <div class="p-4">
       <h3 class="text-lg font-semibold mb-2 text-balance">{{ title }}</h3>
-      <p class="text-muted mb-2 text-pretty">{{ description.slice(0, 100) }}...</p>
+      <p class="text-muted mb-2 text-pretty">{{ descriptionComputed }}...</p>
 
       <div class="flex items-center gap-4 text-dimmed text-sm">
         <span class="flex items-center gap-2">

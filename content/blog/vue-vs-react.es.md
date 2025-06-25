@@ -1,6 +1,6 @@
 ---
 title: "Mi Elección es Vue: Lo que me Hizo Dejar React Atrás."
-description: Una publicación sobre las principales diferencias entre Vue y React.
+description: Descubre por qué un desarrollador de React experimentado decidió cambiar a Vue.js. Este post comparte mi trayectoria personal a lo largo de tres años de desarrollo en React, compara las fortalezas y debilidades de ambos React y Vue (con Composition API) y revela por qué la amigabilidad del desarrollador de Vue fue la que finalmente se impuso. Perfecto para desarrolladores que consideran cambiar de framework o buscan una comparación honesta.
 date: 2025-06-24
 author: Osvaldo Valentín
 slug: vue-vs-react

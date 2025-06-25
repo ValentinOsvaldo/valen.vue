@@ -1,6 +1,6 @@
 ---
 title: "My Choice is Vue: What Made Me Leave React Behind."
-description: Discover why a seasoned React developer made the switch to Vue.js\! This post shares a personal journey through three years of React development, compares the strengths and weaknesses of both React and Vue (with Composition API), and reveals why Vue's developer-friendliness ultimately won out. Perfect for developers considering a framework change or looking for an honest comparison.
+description: Discover why a seasoned React developer made the switch to Vue.js! This post shares a personal journey through three years of React development, compares the strengths and weaknesses of both React and Vue (with Composition API), and reveals why Vue's developer-friendliness ultimately won out. Perfect for developers considering a framework change or looking for an honest comparison.
 date: 2025-06-24
 author: Osvaldo Valentín
 slug: vue-vs-react
