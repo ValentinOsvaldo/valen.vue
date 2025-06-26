@@ -19,7 +19,7 @@ useSeoMeta({
 
 <template>
   <UContainer as="main" class="max-w-4xl">
-    <section class="w-full flex items-center justify-center p-4">
+    <section class="w-full flex items-center justify-center p-4 min-h-screen lg:min-h-auto">
       <div class="text-center text-balance space-y-3 container mx-auto my-20 mt-32">
         <motion.div
           :initial="false"
@@ -87,5 +87,7 @@ useSeoMeta({
         </motion.div>
       </div>
     </section>
+
+    <BlogLastPosts />
   </UContainer>
 </template>

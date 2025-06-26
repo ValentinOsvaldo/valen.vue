@@ -31,8 +31,9 @@ useSeoMeta({
       :whileInView="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
       :transition="{ duration: 0.6, ease: 'easeOut' }"
       class="text-4xl font-bold mb-8"
-      >Blog</motion.h1
     >
+      Blog
+    </motion.h1>
 
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <motion.div
