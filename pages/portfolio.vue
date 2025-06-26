@@ -19,9 +19,9 @@ const skills = computed<Record<Skill, string[]>>(() => ({
 <template>
   <motion.div
     :initial="false"
-    :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
-    :whileInView="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
-    :transition="{ duration: 0.8, ease: 'easeOut' }"
+    :animate="{ opacity: 0, filter: 'blur(10px)' }"
+    :whileInView="{ opacity: 1, filter: 'blur(0px)' }"
+    :transition="{ duration: 0.4, ease: 'easeOut' }"
   >
     <UContainer as="main" class="space-y-8 max-w-4xl mb-24 mt-8 lg:mt-24">
       <section>

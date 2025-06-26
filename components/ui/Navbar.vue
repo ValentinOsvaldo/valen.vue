@@ -2,7 +2,7 @@
 import { UButton, UiColorModeButton } from '#components';
 import { motion } from 'motion-v';
 const route = useRoute();
-const { locale, t } = useI18n();
+const { locale, t, setLocale } = useI18n();
 
 const routes = computed(() => [
   {
@@ -44,5 +44,9 @@ const routes = computed(() => [
     </UButton>
 
     <UiColorModeButton />
+
+    <UButton variant="ghost" color="neutral" class="rounded-full" @click="setLocale(locale === 'en' ? 'es' : 'en')">
+      {{ locale === 'en' ? 'es' : 'en' }}
+    </UButton>
   </motion.nav>
 </template>

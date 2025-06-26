@@ -40,8 +40,8 @@ useSeoMeta({
         v-for="post in posts"
         class="h-full"
         :initial="false"
-        :animate="{ opacity: 0, filter: 'blur(5px)', scale: 0.95 }"
-        :whileInView="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+        :animate="{ opacity: 0, filter: 'blur(5px)' }"
+        :whileInView="{ opacity: 1, filter: 'blur(0px)' }"
         :transition="{ duration: 0.8, ease: 'easeOut' }"
       >
         <BlogCard

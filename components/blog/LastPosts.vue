@@ -28,8 +28,8 @@ const { data: posts } = await useAsyncData(path.value, () => {
       :transition="{ duration: 0.8, ease: 'easeOut' }"
       class="mb-8"
     >
-      <h2 class="text-2xl font-medium">Latest posts</h2>
-      <p class="text-muted">Some of my latest post</p>
+      <h2 class="text-2xl font-medium">{{ $t('home.blog.latest-posts') }}</h2>
+      <p class="text-muted">{{ $t('home.blog.latest-posts-message') }}</p>
     </motion.div>
 
     <motion.div
