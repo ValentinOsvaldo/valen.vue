@@ -28,9 +28,9 @@ useSeoMeta({
 </script>
 
 <template>
-  <UContainer class="max-w-4xl mx-auto my-8">
+  <UContainer class="max-w-4xl mx-auto mt-28 mb-24">
     <nav class="mb-8">
-      <UButton variant="subtle" leading-icon="i-lucide-arrow-left" to="/blog">
+      <UButton variant="subtle" color="neutral" leading-icon="i-lucide-arrow-left" to="/blog">
         {{ $t("blog.back") }}
       </UButton>
     </nav>

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { UButton, UiColorModeButton } from '#components';
+import { motion } from 'motion-v';
 const route = useRoute();
 const { locale, t } = useI18n();
 
@@ -22,23 +24,25 @@ const routes = computed(() => [
 </script>
 
 <template>
-  <header class="flex items-center justify-center top-2 sticky z-50">
-    <nav
-      class="mt-4 px-4 py-1 mx-auto rounded-full bg-default/30 backdrop-blur-xl border border-muted flex items-center flex-row gap-1"
+  <motion.nav
+    :initial="false"
+    :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
+    :whileInView="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+    :transition="{ duration: 0.8, ease: 'easeOut' }"
+    class="mt-2 px-4 py-1 mx-auto rounded-full bg-default/80 backdrop-blur-2xl border border-muted flex items-center flex-row justify-center gap-1 z-50 fixed bottom-4 lg:bottom-auto lg:top-4 w-fit inset-x-0"
+  >
+    <UButton
+      v-for="item in routes"
+      :key="item.href"
+      variant="link"
+      color="neutral"
+      :to="item.href"
+      :active="item.active"
+      size="lg"
     >
-      <UButton
-        v-for="item in routes"
-        :key="item.href"
-        variant="link"
-        color="neutral"
-        :to="item.href"
-        :active="item.active"
-        size="lg"
-      >
-        {{ item.label }}
-      </UButton>
+      {{ item.label }}
+    </UButton>
 
-      <UiColorModeButton />
-    </nav>
-  </header>
+    <UiColorModeButton />
+  </motion.nav>
 </template>
