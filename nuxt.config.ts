@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/test-utils',
     '@nuxt/content',
+    'motion-v/nuxt',
   ],
 
   i18n: {
@@ -45,7 +46,7 @@ export default defineNuxtConfig({
       {
         name: 'Geist',
         provider: 'google',
-      }
+      },
     ],
   },
 
@@ -73,7 +74,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/': { prerender: true },
-    '/portfolio': { ssr: false },
+    '/portfolio': { ssr: true },
     '/blog/**': { prerender: true },
   },
   nitro: {

@@ -21,9 +21,10 @@ async function handleGenerate () {
 <template>
   <UButton
     :label="$t('portfolio.resume.generate')"
-    color="primary"
+    color="neutral"
     variant="subtle"
     size="lg"
+    class="cursor-pointer"
     @click="handleGenerate"
   />
 </template>

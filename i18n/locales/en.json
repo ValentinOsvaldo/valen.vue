@@ -1,10 +1,14 @@
 {
   "home": {
     "hero": {
-      "title": "Improving your apps",
+      "title": "Hi, I'm Osvaldo Valentin a Front-End Developer",
       "slogan": "My goal is to create innovative and user-friendly applications that meet your needs and exceed your expectations.",
       "mail": "Get in touch",
       "portfolio": "Portfolio"
+    },
+    "blog": {
+      "latest-posts": "Latest Posts",
+      "latest-posts-message": "Some of my latest posts"
     }
   },
   "navbar": {

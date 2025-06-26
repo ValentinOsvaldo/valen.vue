@@ -6,13 +6,32 @@
 }
 
 @theme {
-  --font-sans: 'Raleway', 'Poppins', Roboto, sans-serif;
+  --font-sans: 'Geist', sans-serif;
   --font-geist: 'Geist', sans-serif;
+
+  --animate-fade-unblur: fade-unblur 1.2s ease-out both;
+
+  @keyframes fade-unblur {
+    0% {
+      opacity: 0;
+      filter: blur(8px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
 }
 
 html,
 body {
   scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply dark:bg-black;
+  }
 }
 
 @layer components {

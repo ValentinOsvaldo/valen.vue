@@ -1,78 +1,52 @@
 <script lang="ts" setup>
-import type { NavigationMenuItem } from "@nuxt/ui";
+import { UButton, UiColorModeButton } from '#components';
+import { motion } from 'motion-v';
 const route = useRoute();
+const { locale, t, setLocale } = useI18n();
 
-const { locale, setLocale, t } = useI18n();
-
-const isOpen = ref(false);
-const items = computed<NavigationMenuItem[]>(() => [
+const routes = computed(() => [
   {
-    label: t("navbar.home"),
-    href: "/" + locale.value,
-    onSelect: function () {
-      isOpen.value = false;
-    },
+    label: t('navbar.home'),
+    href: `/`,
     active: route.path.split('/').length <= 2,
   },
   {
-    label: t("navbar.portfolio"),
-    href: "/" + locale.value + "/portfolio",
-    onSelect: function () {
-      isOpen.value = false;
-    },
-    active: route.path.includes("/portfolio"),
+    label: t('navbar.portfolio'),
+    href: `/${locale.value}/portfolio`,
+    active: route.path.includes('/portfolio'),
   },
   {
-    label: 'Blog',
-    href: "/" + locale.value + "/blog",
-    onSelect: function () {
-      isOpen.value = false;
-    },
-    active: route.path.includes("/blog"),
+    label: t('navbar.blog'),
+    href: `/${locale.value}/blog`,
+    active: route.path.includes('/blog'),
   },
 ]);
 </script>
 
 <template>
-  <header class="bg-default/10 backdrop-blur-lg sticky top-0 z-50">
-    <UContainer class="flex items-center justify-between px-4 py-3 relative z-50">
-      <NuxtLink to="/">
-        <h1 class="font-bold text-xl">
-          <span>Valen</span>
-          <span class="text-primary">.Vue</span>
-        </h1>
-      </NuxtLink>
+  <motion.nav
+    :initial="false"
+    :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
+    :whileInView="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+    :transition="{ duration: 0.8, ease: 'easeOut' }"
+    class="mt-2 px-4 py-1 mx-auto rounded-full bg-default/80 backdrop-blur-2xl border border-muted flex items-center flex-row justify-center gap-1 z-50 fixed bottom-4 lg:bottom-auto lg:top-4 w-fit inset-x-0"
+  >
+    <UButton
+      v-for="item in routes"
+      :key="item.href"
+      variant="link"
+      color="neutral"
+      :to="item.href"
+      :active="item.active"
+      size="lg"
+    >
+      {{ item.label }}
+    </UButton>
 
-      <div class="flex items-center gap-2 flex-row">
-        <UNavigationMenu :items="items" class="hidden lg:block" />
-        <UiColorModeButton />
-        <UButton
-          variant="subtle"
-          @click="setLocale(locale === 'en' ? 'es' : 'en')"
-        >
-          {{ locale }}  
-        </UButton>
-        <u-slideover :open="isOpen" :close="{ onClick: () => {isOpen = false }}">
-          <UButton
-            icon="i-lucide-menu"
-            variant="ghost"
-            class="lg:hidden"
-            :ui="{ leadingIcon: 'size-6!' }"
-            @click="isOpen = !isOpen"
-          />
+    <UiColorModeButton />
 
-          <template #title>
-            <h1 class="font-bold text-2xl">
-              <span>Valen</span>
-              <span class="text-primary">.Vue</span>
-            </h1>
-          </template>
-
-          <template #body>
-            <u-navigation-menu :items="items" orientation="vertical" />
-          </template>
-        </u-slideover>
-      </div>
-    </UContainer>
-  </header>
+    <UButton variant="ghost" color="neutral" class="rounded-full" @click="setLocale(locale === 'en' ? 'es' : 'en')">
+      {{ locale === 'en' ? 'es' : 'en' }}
+    </UButton>
+  </motion.nav>
 </template>
