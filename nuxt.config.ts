@@ -73,7 +73,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/': { prerender: true },
-    '/portfolio': { ssr: false },
+    '/portfolio': { ssr: true },
     '/blog/**': { prerender: true },
   },
   nitro: {

@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 useSeoMeta({
-  title: "Valen.Vue - Portfolio",
+  title: 'Valen.Vue - Portfolio',
 });
 
-type Skill = "front" | "mobile" | "back" | "tools";
+type Skill = 'front' | 'mobile' | 'back' | 'tools';
 
 const skills = computed<Record<Skill, string[]>>(() => ({
-  front: ["Javascript", "Typescript", "Vue", "React", "Next.js", "Nuxt.js"],
-  mobile: ["React Native", "Expo", "Flutter"],
-  back: ["NestJs"],
-  tools: ["Git", "REST APIs", "Tailwind CSS"],
+  front: ['Javascript', 'Typescript', 'Vue', 'React', 'Next.js', 'Nuxt.js'],
+  mobile: ['React Native', 'Expo', 'Flutter'],
+  back: ['NestJs'],
+  tools: ['Git', 'REST APIs', 'Tailwind CSS'],
 }));
 </script>
 
@@ -21,19 +21,19 @@ const skills = computed<Record<Skill, string[]>>(() => ({
 
     <section class="mt-8">
       <h2 class="mb-2 text-4xl font-bold">
-        {{ $t("portfolio.summary.title") }}
+        {{ $t('portfolio.summary.title') }}
       </h2>
 
       <hr class="h-px my-2 bg-accented border-0" />
 
       <p class="text-muted">
-        {{ $t("portfolio.summary.about") }}
+        {{ $t('portfolio.summary.about') }}
       </p>
     </section>
 
     <section>
       <h2 class="mb-2 text-4xl font-bold">
-        {{ $t("portfolio.experience.title") }}
+        {{ $t('portfolio.experience.title') }}
       </h2>
 
       <hr class="h-px my-2 bg-accented border-0" />
@@ -48,9 +48,7 @@ const skills = computed<Record<Skill, string[]>>(() => ({
           :key="index"
           class="mb-10 ms-4"
         >
-          <div
-            class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-background bg-muted"
-          ></div>
+          <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-background bg-muted"></div>
 
           <time class="mb-1 text-sm leading-none text-dimmed">
             {{ $rt(experience.date) }}
@@ -75,37 +73,30 @@ const skills = computed<Record<Skill, string[]>>(() => ({
 
     <section>
       <h2 class="mb-2 text-4xl font-bold">
-        {{ $t("portfolio.skills.title") }}
+        {{ $t('portfolio.skills.title') }}
       </h2>
 
       <hr class="h-px my-2 bg-accented border-0" />
 
       <div class="flex flex-row flex-wrap gap-2">
         <template v-for="[group, list] in Object.entries(skills)" :key="group">
-          <UBadge
-            v-for="skill in list"
-            :key="skill"
-            :label="skill"
-            color="primary"
-            variant="subtle"
-            size="lg"
-          />
+          <UBadge v-for="skill in list" :key="skill" :label="skill" color="neutral" variant="subtle" size="lg" />
         </template>
       </div>
     </section>
 
     <section>
       <h2 class="mb-2 text-4xl font-bold">
-        {{ $t("portfolio.personalProjects.title") }}
+        {{ $t('portfolio.personalProjects.title') }}
       </h2>
 
       <hr class="h-px my-2 bg-accented border-0" />
 
       <ol>
         <li
-          v-for="(project, index) in $tm(
+          v-for="(project, index) in ($tm(
             'portfolio.personalProjects.items',
-          ) as any[]"
+          ) as any[])"
           :key="index"
         >
           <h3 class="text-lg font-semibold text-default">
@@ -118,22 +109,20 @@ const skills = computed<Record<Skill, string[]>>(() => ({
 
     <section>
       <h2 class="mb-2 text-4xl font-bold">
-        {{ $t("portfolio.education.title") }}
+        {{ $t('portfolio.education.title') }}
       </h2>
 
       <hr class="h-px my-2 bg-accented border-0" />
 
       <ol class="relative border-s border-border border-accented">
         <li
-          v-for="(education, index) in $tm(
+          v-for="(education, index) in ($tm(
             'portfolio.education.items',
-          ) as any[]"
+          ) as any[])"
           :key="index"
           class="mb-10 ms-4"
         >
-          <div
-            class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-background bg-muted"
-          ></div>
+          <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-background bg-muted"></div>
 
           <time class="mb-1 text-sm leading-none text-dimmed">
             {{ $rt(education.date) }}

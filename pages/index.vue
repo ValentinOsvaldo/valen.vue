@@ -12,13 +12,15 @@ useSeoMeta({
   ogType: "website",
   twitterCard: "summary_large_image",
 });
+
+const { locale } = useI18n();
 </script>
 
 <template>
-  <main>
+  <UContainer as="main" class="max-w-4xl">
     <section class="w-full flex items-center justify-center p-4">
       <div class="text-center text-balance space-y-3 container mx-auto my-20">
-        <h2 class="text-5xl lg:text-6xl font-bold text-primary mb-4">
+        <h2 class="text-5xl lg:text-6xl font-medium text-primary mb-4">
           {{ $t("home.hero.title") }}
         </h2>
 
@@ -50,18 +52,14 @@ useSeoMeta({
         </div>
 
         <div class="flex items-center justify-center gap-4 flex-row mt-4">
-          <NuxtLink to="mailto:valentingarcia.osvaldo@gmail.com">
-            <UButton leading-icon="i-lucide-mail" size="lg">
-              {{ $t("home.hero.mail") }}
-            </UButton>
-          </NuxtLink>
-          <NuxtLink to="/portfolio">
-            <UButton leading-icon="i-lucide-briefcase" size="lg" variant="soft">
-              {{ $t("home.hero.portfolio") }}
-            </UButton>
-          </NuxtLink>
+          <UButton leading-icon="i-lucide-mail" size="lg" color="neutral" variant="outline" to="mailto:valentingarcia.osvaldo@gmail.com">
+            {{ $t("home.hero.mail") }}
+          </UButton>
+          <UButton leading-icon="i-lucide-briefcase" size="lg" variant="ghost" color="neutral" :to="`${locale}/portfolio`">
+            {{ $t("home.hero.portfolio") }}
+          </UButton>
         </div>
       </div>
     </section>
-  </main>
+  </UContainer>
 </template>
