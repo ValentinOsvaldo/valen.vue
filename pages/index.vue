@@ -70,7 +70,7 @@ useSeoMeta({
             leading-icon="i-lucide-mail"
             size="lg"
             color="neutral"
-            variant="outline"
+            variant="solid"
             to="mailto:valentingarcia.osvaldo@gmail.com"
           >
             {{ $t('home.hero.mail') }}
@@ -78,7 +78,7 @@ useSeoMeta({
           <UButton
             leading-icon="i-lucide-briefcase"
             size="lg"
-            variant="ghost"
+            variant="soft"
             color="neutral"
             :to="`${locale}/portfolio`"
           >
