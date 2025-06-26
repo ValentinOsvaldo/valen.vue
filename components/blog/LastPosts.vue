@@ -20,7 +20,7 @@ const { data: posts } = await useAsyncData(path.value, () => {
 </script>
 
 <template>
-  <section>
+  <section class="mb-24">
     <motion.div
       :initial="false"
       :animate="{ opacity: 0, filter: 'blur(5px)', scale: 0.95 }"

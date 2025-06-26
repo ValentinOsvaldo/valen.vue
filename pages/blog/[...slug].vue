@@ -38,7 +38,7 @@ useSeoMeta({
     :whileInView="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
     :transition="{ duration: 0.2, ease: 'easeOut' }"
   >
-    <UContainer class="max-w-4xl mx-auto mt-28 mb-24">
+    <UContainer class="max-w-4xl mx-auto mt-20 mb-24">
       <nav class="mb-8">
         <UButton variant="subtle" color="neutral" leading-icon="i-lucide-arrow-left" @click="$router.back()">
           {{ $t('blog.back') }}
