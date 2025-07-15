@@ -11,8 +11,8 @@ type Skill = 'front' | 'mobile' | 'back' | 'tools';
 const skills = computed<Record<Skill, string[]>>(() => ({
   front: ['Javascript', 'Typescript', 'Vue', 'React', 'Next.js', 'Nuxt.js'],
   mobile: ['React Native', 'Expo', 'Flutter'],
-  back: ['NestJs'],
-  tools: ['Git', 'REST APIs', 'Tailwind CSS'],
+  back: ['NestJs', 'Postgres', 'Mongo', 'Redis'],
+  tools: ['Git', 'REST APIs', 'Tailwind CSS', 'Docker'],
 }));
 </script>
 
@@ -20,7 +20,7 @@ const skills = computed<Record<Skill, string[]>>(() => ({
   <motion.div
     :initial="false"
     :animate="{ opacity: 0, filter: 'blur(10px)' }"
-    :whileInView="{ opacity: 1, filter: 'blur(0px)' }"
+    :while-in-view="{ opacity: 1, filter: 'blur(0px)' }"
     :transition="{ duration: 0.4, ease: 'easeOut' }"
   >
     <UContainer as="main" class="space-y-8 max-w-4xl mb-24 mt-8 lg:mt-24">
@@ -33,7 +33,7 @@ const skills = computed<Record<Skill, string[]>>(() => ({
           {{ $t('portfolio.summary.title') }}
         </h2>
 
-        <hr class="h-px my-2 bg-accented border-0" />
+        <hr class="h-px my-2 bg-accented border-0" >
 
         <p class="text-muted">
           {{ $t('portfolio.summary.about') }}
@@ -45,7 +45,7 @@ const skills = computed<Record<Skill, string[]>>(() => ({
           {{ $t('portfolio.experience.title') }}
         </h2>
 
-        <hr class="h-px my-2 bg-accented border-0" />
+        <hr class="h-px my-2 bg-accented border-0" >
 
         <ol class="relative border-s border-border border-accented">
           <li
@@ -57,7 +57,7 @@ const skills = computed<Record<Skill, string[]>>(() => ({
             :key="index"
             class="mb-10 ms-4"
           >
-            <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-background bg-muted"></div>
+            <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-background bg-muted" />
 
             <time class="mb-1 text-sm leading-none text-dimmed">
               {{ $rt(experience.date) }}
@@ -85,7 +85,7 @@ const skills = computed<Record<Skill, string[]>>(() => ({
           {{ $t('portfolio.skills.title') }}
         </h2>
 
-        <hr class="h-px my-2 bg-accented border-0" />
+        <hr class="h-px my-2 bg-accented border-0" >
 
         <div class="flex flex-row flex-wrap gap-2">
           <template v-for="[group, list] in Object.entries(skills)" :key="group">
@@ -99,7 +99,7 @@ const skills = computed<Record<Skill, string[]>>(() => ({
           {{ $t('portfolio.personalProjects.title') }}
         </h2>
 
-        <hr class="h-px my-2 bg-accented border-0" />
+        <hr class="h-px my-2 bg-accented border-0" >
 
         <ol>
           <li
@@ -121,7 +121,7 @@ const skills = computed<Record<Skill, string[]>>(() => ({
           {{ $t('portfolio.education.title') }}
         </h2>
 
-        <hr class="h-px my-2 bg-accented border-0" />
+        <hr class="h-px my-2 bg-accented border-0">
 
         <ol class="relative border-s border-border border-accented">
           <li
@@ -131,7 +131,7 @@ const skills = computed<Record<Skill, string[]>>(() => ({
             :key="index"
             class="mb-10 ms-4"
           >
-            <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-background bg-muted"></div>
+            <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-background bg-muted" />
 
             <time class="mb-1 text-sm leading-none text-dimmed">
               {{ $rt(education.date) }}
