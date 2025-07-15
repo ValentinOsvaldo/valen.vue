@@ -34,7 +34,7 @@ Most of my background is in the logistics and transportation industry, where I'v
       {
         title: 'Semi-Senior Front-End Mobile Developer',
         company: 'AETO',
-        date: '2023 – Present',
+        date: '2023 – 2025',
         bullets: [
           'Built the AETO App (React Native + Bluetooth) from scratch, now used by over 150 active users for field diagnostics.',
           'Developed a mobile app for roadside technicians with real-time route tracing using Google Maps to coordinate field rescues.',
@@ -43,7 +43,7 @@ Most of my background is in the logistics and transportation industry, where I'v
       {
         title: 'Junior Front-End Developer',
         company: 'AETO',
-        date: '2022 – Present',
+        date: '2022 – 2023',
         bullets: [
           'Migrated a legacy Django Template system to Next.js + DRF, adding full i18n and modern UI/UX improvements.',
           'Built a roadside assistance platform using React, TypeScript, and Google Maps, featuring payment flows and optimized UI rendering.',
@@ -145,7 +145,7 @@ Mi experiencia se ha desarrollado principalmente en el sector de logística y tr
       {
         title: 'Desarrollador Front-End Mobile Semi Senior',
         company: 'AETO',
-        date: '2023 – Presente',
+        date: '2023 – 2025',
         bullets: [
           'Desarrollé desde cero la AETO App (React Native + Bluetooth), actualmente usada por más de 150 usuarios para diagnóstico de campo.',
           'Implementé una app móvil para rescatistas viales con trazado de rutas en tiempo real usando Google Maps.',
@@ -154,7 +154,7 @@ Mi experiencia se ha desarrollado principalmente en el sector de logística y tr
       {
         title: 'Desarrollador Front-End Junior',
         company: 'AETO',
-        date: '2022 – Presente',
+        date: '2022 – 2023',
         bullets: [
           'Migré un sistema heredado con Django Templates a Next.js + DRF, incorporando internacionalización y una interfaz moderna.',
           'Desarrollé una plataforma de asistencia vial usando React, TypeScript y Google Maps, con flujos de pago e interfaces optimizadas.',
