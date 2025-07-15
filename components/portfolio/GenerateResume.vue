@@ -10,7 +10,7 @@ const { locale } = useI18n()
  */
 async function handleGenerate () {
   // Guard for hydration edge-cases
-  if (process.server) return
+  if (import.meta.server) return
 
   // Dynamic import ✓ code-split ✓ client-only
   const { generateResume } = await import('~/helpers/resume.generate')

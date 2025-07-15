@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { TDocumentDefinitions } from "pdfmake/interfaces";
 import { resumeContentEn, resumeContentEs } from "./resume.content";
 import robotoRegularUri from "~/assets/fonts/Roboto-Regular.ttf?inline";
@@ -85,6 +86,12 @@ export async function generateResume(lang: "es" | "en" = "en") {
           {
             text: c.info.github,
             link: `https://${c.info.github}`,
+            color: "blue",
+          },
+          " | ",
+          {
+            text: 'https://valen-vue.vercel.app/',
+            link: 'https://valen-vue.vercel.app/',
             color: "blue",
           },
         ],
