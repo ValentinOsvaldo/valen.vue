@@ -158,16 +158,5 @@ export default defineNuxtConfig({
         usePolling: true,
       },
     },
-    build: {
-      // Reduce initial bundle size
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            vendor: ['vue', 'vue-router'],
-            ui: ['@nuxt/ui'],
-          },
-        },
-      },
-    },
   },
 });
