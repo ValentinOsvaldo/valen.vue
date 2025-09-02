@@ -20,72 +20,74 @@ useSeoMeta({
 <template>
   <UContainer as="main" class="max-w-4xl">
     <section class="w-full flex items-center justify-center p-4 min-h-screen lg:min-h-auto">
-      <div class="text-center text-balance space-y-3 container mx-auto my-20 mt-32">
-        <motion.div
-          :initial="false"
-          :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
-          :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
-          :transition="{ duration: 0.8, ease: 'easeOut' }"
-        >
-          <h1
-            class="text-4xl bg-neutral-800 dark:bg-gradient-to-r dark:from-[#3c3c3c] dark:via-[#eeeeee] dark:to-white bg-clip-text text-transparent"
+      <ClientOnly>
+        <div class="text-center text-balance space-y-3 container mx-auto my-20 mt-32">
+          <motion.div
+            :initial="false"
+            :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
+            :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+            :transition="{ duration: 0.8, ease: 'easeOut' }"
           >
-            {{ $t('home.hero.title') }}
-          </h1>
-        </motion.div>
+            <h1
+              class="text-4xl bg-neutral-800 dark:bg-gradient-to-r dark:from-[#3c3c3c] dark:via-[#eeeeee] dark:to-white bg-clip-text text-transparent"
+            >
+              {{ $t('home.hero.title') }}
+            </h1>
+          </motion.div>
 
-        <motion.p
-          :initial="false"
-          :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
-          :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
-          :transition="{ duration: 1, ease: 'easeOut' }"
-          class="text-muted text-lg"
-        >
-          {{ $t('home.hero.slogan') }}
-        </motion.p>
-
-        <motion.div
-          :initial="false"
-          :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
-          :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
-          :transition="{ duration: 1.2, ease: 'easeOut' }"
-          class="flex items-center justify-center gap-4 flex-row"
-        >
-          <NuxtLink to="https://github.com/ValentinOsvaldo/" target="_blank" rel="noopener">
-            <UIcon name="i-lucide-github" class="size-8! text-muted transition hover:text-primary" />
-          </NuxtLink>
-          <NuxtLink to="https://linkedin.com/in/valentin-osvaldo/" target="_blank" rel="noopener">
-            <UIcon name="i-lucide-linkedin" class="size-8! text-muted transition hover:text-primary" />
-          </NuxtLink>
-        </motion.div>
-
-        <motion.div
-          :initial="false"
-          :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
-          :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
-          :transition="{ duration: 1.3, ease: 'easeOut' }"
-          class="flex items-center justify-center gap-4 flex-row mt-4"
-        >
-          <UButton
-            leading-icon="i-lucide-mail"
-            size="lg"
-            color="neutral"
-            variant="solid"
-            to="mailto:valentingarcia.osvaldo@gmail.com"
+          <motion.p
+            :initial="false"
+            :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
+            :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+            :transition="{ duration: 1, ease: 'easeOut' }"
+            class="text-muted text-lg"
           >
-            {{ $t('home.hero.mail') }}
-          </UButton>
-          <UButton
-            leading-icon="i-lucide-briefcase"
-            size="lg"
-            variant="soft"
-            color="neutral"
-            :to="`${locale}/portfolio`"
+            {{ $t('home.hero.slogan') }}
+          </motion.p>
+
+          <motion.div
+            :initial="false"
+            :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
+            :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+            :transition="{ duration: 1.2, ease: 'easeOut' }"
+            class="flex items-center justify-center gap-4 flex-row"
           >
-            {{ $t('home.hero.portfolio') }}
-          </UButton>
-        </motion.div>
-      </div>
+            <NuxtLink to="https://github.com/ValentinOsvaldo/" target="_blank" rel="noopener">
+              <UIcon name="i-lucide-github" class="size-8! text-muted transition hover:text-primary" />
+            </NuxtLink>
+            <NuxtLink to="https://linkedin.com/in/valentin-osvaldo/" target="_blank" rel="noopener">
+              <UIcon name="i-lucide-linkedin" class="size-8! text-muted transition hover:text-primary" />
+            </NuxtLink>
+          </motion.div>
+
+          <motion.div
+            :initial="false"
+            :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
+            :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+            :transition="{ duration: 1.3, ease: 'easeOut' }"
+            class="flex items-center justify-center gap-4 flex-row mt-4"
+          >
+            <UButton
+              leading-icon="i-lucide-mail"
+              size="lg"
+              color="neutral"
+              variant="solid"
+              to="mailto:valentingarcia.osvaldo@gmail.com"
+            >
+              {{ $t('home.hero.mail') }}
+            </UButton>
+            <UButton
+              leading-icon="i-lucide-briefcase"
+              size="lg"
+              variant="soft"
+              color="neutral"
+              :to="`${locale}/portfolio`"
+            >
+              {{ $t('home.hero.portfolio') }}
+            </UButton>
+          </motion.div>
+        </div>
+      </ClientOnly>
     </section>
 
     <BlogLastPosts />
