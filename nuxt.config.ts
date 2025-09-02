@@ -72,11 +72,11 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  // routeRules: {
-  //   '/': { prerender: true },
-  //   '/portfolio': { ssr: true },
-  //   '/blog/**': { prerender: true },
-  // },
+  routeRules: {
+    '/': { prerender: true },
+    '/portfolio': { ssr: true },
+    '/blog/**': { prerender: true },
+  },
   nitro: {
     preset: 'vercel',
   },
@@ -119,9 +119,9 @@ export default defineNuxtConfig({
     },
   },
 
-  experimental: {
-    viewTransition: true,
-  },
+  // experimental: {
+  //   viewTransition: true,
+  // },
 
   vite: {
     server: {
