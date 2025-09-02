@@ -119,9 +119,9 @@ export default defineNuxtConfig({
     },
   },
 
-  // experimental: {
-  //   viewTransition: true,
-  // },
+  experimental: {
+    viewTransition: true,
+  },
 
   vite: {
     server: {
