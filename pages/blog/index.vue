@@ -28,7 +28,7 @@ useSeoMeta({
     <motion.h1
       :initial="false"
       :animate="{ opacity: 0, filter: 'blur(5px)', scale: 0.95 }"
-      :whileInView="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+      :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
       :transition="{ duration: 0.6, ease: 'easeOut' }"
       class="text-4xl font-bold mb-8"
     >
@@ -38,10 +38,11 @@ useSeoMeta({
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <motion.div
         v-for="post in posts"
+        :key="post.slug"
         class="h-full"
         :initial="false"
         :animate="{ opacity: 0, filter: 'blur(5px)' }"
-        :whileInView="{ opacity: 1, filter: 'blur(0px)' }"
+        :while-in-view="{ opacity: 1, filter: 'blur(0px)' }"
         :transition="{ duration: 0.8, ease: 'easeOut' }"
       >
         <BlogCard

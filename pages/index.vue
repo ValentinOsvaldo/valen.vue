@@ -24,7 +24,7 @@ useSeoMeta({
         <motion.div
           :initial="false"
           :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
-          :whileInView="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+          :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
           :transition="{ duration: 0.8, ease: 'easeOut' }"
         >
           <h1
@@ -37,7 +37,7 @@ useSeoMeta({
         <motion.p
           :initial="false"
           :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
-          :whileInView="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+          :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
           :transition="{ duration: 1, ease: 'easeOut' }"
           class="text-muted text-lg"
         >
@@ -47,7 +47,7 @@ useSeoMeta({
         <motion.div
           :initial="false"
           :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
-          :whileInView="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+          :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
           :transition="{ duration: 1.2, ease: 'easeOut' }"
           class="flex items-center justify-center gap-4 flex-row"
         >
@@ -62,7 +62,7 @@ useSeoMeta({
         <motion.div
           :initial="false"
           :animate="{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }"
-          :whileInView="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
+          :while-in-view="{ opacity: 1, filter: 'blur(0px)', scale: 1 }"
           :transition="{ duration: 1.3, ease: 'easeOut' }"
           class="flex items-center justify-center gap-4 flex-row mt-4"
         >
