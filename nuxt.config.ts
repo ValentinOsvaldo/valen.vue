@@ -75,29 +75,29 @@ export default defineNuxtConfig({
   },
 
   // Optimized route rules for better first load performance
-  routeRules: {
-    // Homepage - SSR for faster first load (no hydration delay)
-    '/': { ssr: true },
-    '/en': { ssr: true },
-    '/es': { ssr: true },
+  // routeRules: {
+  //   // Homepage - SSR for faster first load (no hydration delay)
+  //   '/': { ssr: true },
+  //   '/en': { ssr: true },
+  //   '/es': { ssr: true },
 
-    // Portfolio page - SSR for dynamic content
-    '/portfolio': { ssr: true },
-    '/en/portfolio': { ssr: true },
-    '/es/portfolio': { ssr: true },
+  //   // Portfolio page - SSR for dynamic content
+  //   '/portfolio': { ssr: true },
+  //   '/en/portfolio': { ssr: true },
+  //   '/es/portfolio': { ssr: true },
 
-    // Blog pages - prerendered for SEO but consider SSR if slow
-    '/blog/**': { prerender: true },
-    '/en/blog/**': { prerender: true },
-    '/es/blog/**': { prerender: true },
+  //   // Blog pages - prerendered for SEO but consider SSR if slow
+  //   '/blog/**': { prerender: true },
+  //   '/en/blog/**': { prerender: true },
+  //   '/es/blog/**': { prerender: true },
 
-    // Static assets - cache aggressively
-    '/images/**': { headers: { 'Cache-Control': 'max-age=31536000' } },
-    '/icons/**': { headers: { 'Cache-Control': 'max-age=31536000' } },
+  //   // Static assets - cache aggressively
+  //   '/images/**': { headers: { 'Cache-Control': 'max-age=31536000' } },
+  //   '/icons/**': { headers: { 'Cache-Control': 'max-age=31536000' } },
 
-    // API routes (if any) - ensure they're server-side
-    '/api/**': { cors: true },
-  },
+  //   // API routes (if any) - ensure they're server-side
+  //   '/api/**': { cors: true },
+  // },
 
   nitro: {
     preset: 'vercel',
